@@ -27,6 +27,8 @@ jobs:
       #   with:
       #     username: ${{ secrets.DOCKERHUB_USERNAME }}
       #     password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Cat Sarif file
+        run: cat results.sarif
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v3
         with:
