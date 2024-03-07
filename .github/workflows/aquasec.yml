@@ -11,7 +11,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Run Aqua scanner
-        uses: docker://aquasec/aqua-scanner
+        uses: docker://aquasec/aqua-scanner:dev
         with:
           args: trivy -d -f sarif -o results.sarif fs --scanners config,vuln,secret .
         env:
